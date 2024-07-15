@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Grid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: cadetblue;
+        }
+
+        .grid-container {
+            display: grid; 
+            grid-template-columns: 1fr 3fr 1fr; 
+            grid-template-rows: auto 1fr auto; 
+            grid-template-areas:
+                'header header header'
+                'content content sidebar'
+                'footer footer footer';
+            grid-gap: 10px;
+            padding: 10px;
+            min-height: 100vh; 
+        }
+
+        .header {
+            grid-area: header;
+            text-align: center;
+            background-color: red;
+            padding: 10px;
+            
+        }
+
+        .main-content {
+             display: contents; 
+             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: blueviolet;
+            padding: 10px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: aqua;
+            padding: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: gray;
+            padding: 10px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; 
+                grid-template-areas:
+                    'header'
+                    'content'
+                    'sidebar'
+                    'footer';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <h1>My Website</h1>
+        </header>
+        <main class="main-content">
+            <section class="content">
+                <h2>Main Content Area</h2>
+                <p>This is where I type a bunch of words to add content to the page.</p>
+                <p>This is where I add a list to make more content on the page.</p>
+                <ul>
+                    <li>List item 1</li>
+                    <li>List item 2</li>
+                    <li>List item 3</li>
+                </ul>
+            </section>
+            <aside class="sidebar">
+                <h2>Sidebar</h2>
+                <p>This is where I type a bunch of words to add content to the page. As I add content, it moves my boxes around, so now I have to figure out why it's doing that.</p>
+                <ul>
+                    <li>Link 1</li>
+                    <li>Link 2</li>
+                    <li>Link 3</li>
+                </ul>
+            </aside>
+        </main>
+        <footer class="footer">
+            <p>Footer content goes here.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+
+

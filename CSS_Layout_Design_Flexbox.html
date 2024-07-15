@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design with Flexbox</title>
+    <style>
+        html, body{
+            background-color: #edf2f4;
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+
+        }
+        nav{
+            display: flex;
+            flex-direction: row; /*Its row by default */
+            justify-content: space-evenly;
+            background-color: #8d99ae;
+            padding: 25px;
+            opacity: 65%;
+        }
+        nav > a{
+            font-family: 'Courier New', Courier, monospace;
+            border: none;
+            color: #d90429;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 24px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+    
+
+        }
+        nav > a:hover{
+            background-color: #d90429;
+            color: #8d99ae;
+
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            text-align: center;
+            background-color: #8d99ae;
+            padding: 30px;
+            background-image: url("daniel-leone-g30P1zcOzXo-unsplash.jpg");
+            background-size: 100% 150%;
+            background-repeat: no-repeat;
+        }
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0); 
+        }
+        main {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-evenly; 
+            align-items: center; 
+            flex-grow: 1; 
+            padding: 20px;
+            background-color: #2b2d42;
+            color: white;
+        }
+        footer {
+            display: flex;
+            justify-content: space-evenly;
+            color: #d90429;
+            text-shadow: 2px 2px 4px rgb(253, 252, 252, 1.0);
+            background-color: #8d99ae;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #8d99ae;
+            width: 35%;
+            padding: 20px;
+            border-radius: 8px;
+            
+        }
+        .events-list h2 {
+            margin-top: 0;
+        }
+        .events-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .events-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .events-list li:last-child {
+            border-bottom: none;
+        }
+        .custom-button {
+    background-color: #d90429;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.custom-button:hover {
+    background-color: #8d99ae;
+    color: #d90429;
+}
+        @media (max-width: 600px) {
+    nav, footer {
+        flex-direction: column;
+    }
+    nav > a, footer > div {
+        margin: 10px 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">About</a>
+    </nav>
+    <header>
+        <h1>Learning Flexbox</h1>
+    </header>
+    <main>
+        <div class="events-list">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li><strong>Music Festival</strong> - July 15, 2024</li>
+                <li><strong>Art Exhibition</strong> - August 5, 2024</li>
+                <li><strong>Food Fair</strong> - September 10, 2024</li>
+                <li><strong>Book Launch</strong> - October 20, 2024</li>
+                <li><strong>Technology Conference</strong> - November 12, 2024</li>
+                <li><strong>Charity Run</strong> - December 7, 2024</li>
+            </ul>
+        </div>
+        <div class="button-container">
+            <button class="custom-button">Click Me!</button>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Email: contact@example.com</p>
+        </div>
+        <div>
+            <h3>Events</h3>
+            <p>Upcoming events and news</p>
+        </div>
+        <div>
+            <h3>Blog</h3>
+            <p>Latest articles and posts</p>
+        </div>
+    </footer>
+</body>
+</html>
+
